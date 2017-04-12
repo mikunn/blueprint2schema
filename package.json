@@ -1,6 +1,6 @@
 {
   "name": "blueprint2schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,6 @@
     "fury-adapter-apib-parser": "^0.7.0"
   },
   "bin": {
-	"blueprint2schema": "./index.js"
+    "blueprint2schema": "./index.js"
   }
 }
