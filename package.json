@@ -1,0 +1,20 @@
+{
+  "name": "blueprint2schema",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mika Kunnas",
+  "license": "MIT",
+  "dependencies": {
+    "apib-include-directive": "^0.1.0",
+    "commander": "^2.9.0",
+    "fury": "^2.3.0",
+    "fury-adapter-apib-parser": "^0.7.0"
+  },
+  "bin": {
+	"blueprint2schema": "./index.js"
+  }
+}
