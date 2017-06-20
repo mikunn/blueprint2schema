@@ -98,7 +98,7 @@ $ blueprint2schema -h
     -i, --input [filepath]  API Blueprint file
     -t, --expand-tabs       Expand tabs to spaces (Linux and OSX only)
     -p, --pretty-print      Enable pretty printing
-	--requests-only         Include schemas only for requests
+    --requests-only         Include schemas only for requests
 ```
 
 # License
