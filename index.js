@@ -77,11 +77,12 @@ function getContents(data, href, transaction) {
 	if (! data[href].hasOwnProperty(method)) {
 		data[href][method] = {
 			'body': buildBody(request),
+			'responses': {}
 		};
 	}
 
 	if (! program.requestsOnly) {
-		responsesDef = data[href][method]['responses'] = {};
+		responsesDef = data[href][method]['responses'];
 		buildResponses(responsesDef, response);
 	}
 
