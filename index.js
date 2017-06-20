@@ -19,6 +19,7 @@ program
 	.option('-i, --input [filepath]', 'API Blueprint file')
 	.option('-t, --expand-tabs', "Expand tabs to spaces (Linux and OSX only)")
 	.option('-p, --pretty-print', "Enable pretty printing")
+	.option('--requests-only', "Include schemas only for requests")
 	.parse(process.argv)
 ;
 
@@ -49,7 +50,6 @@ includeDir = program.input ? path.dirname(program.input) : process.cwd();
 				}
 			});
 		}
-
 	})
 ;
 
@@ -77,12 +77,13 @@ function getContents(data, href, transaction) {
 	if (! data[href].hasOwnProperty(method)) {
 		data[href][method] = {
 			'body': buildBody(request),
-			'responses': {}
 		};
 	}
 
-	responsesDef = data[href][method]['responses'];
-	buildResponses(responsesDef, response);
+	if (! program.requestsOnly) {
+		responsesDef = data[href][method]['responses'] = {};
+		buildResponses(responsesDef, response);
+	}
 
 	return data;
 }
